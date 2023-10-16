@@ -11,15 +11,15 @@
         <p>Login Here</p>
         <div  class="user-info">
           
-            <form method="post">
+            <form method="post" >
                 <table class="login-1">
                     <tr class="inpt">
                         <td ><span>Username</span></td>
-                        <td><input type="text" name="unm" required></td>
+                        <td><input type="text" name="username" required></td>
                     </tr><br>
                     <tr class="inpt">
                         <td ><span>Password</span></td>
-                        <td><input type="password" name="pass" required></td>
+                        <td><input type="password" name="password" required></td>
                     </tr>
                     <tr class="logn-btn" >
                         <td></td>
@@ -37,19 +37,20 @@
 <div class="sign">
     <p>New to Enest? <a href=""> Sign up</a></p>
     <div  class="user-info">
-        <form method="post">
+        <form method="post" action="{{route('signup.data')}}">
+            @csrf
             <table class="login-1">
                 <tr class="inpt-1">
                     <td ><span>Full Name</span></td>
-                    <td><input type="text" name="fname" required></td>
+                    <td><input type="text" name="fullname" required></td>
                 </tr><br>
                 <tr class="inpt-1">
                     <td ><span>Email</span></td>
-                    <td><input type="email" name="eml" required></td>
+                    <td><input type="email" name="email" required></td>
                 </tr>
                 <tr class="inpt-1">
                     <td ><span>Password</span></td>
-                    <td><input type="password" name="pw" required></td>
+                    <td><input type="password" name="password" required></td>
                 </tr>
                 <tr class="logn-btn" >
                     <td></td>
