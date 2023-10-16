@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CrudController extends Controller
 {
-    public function sign_data(Request $request){
+    public function signup_data(Request $request){
         $add  =  new Signup;
         if($request->isMethod('post'))
         {

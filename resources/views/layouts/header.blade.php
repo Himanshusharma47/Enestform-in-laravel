@@ -17,25 +17,28 @@
                     <p>THE BIGGEST CHOICE OF THE WEB</p>
                 </div>
                 <div class="btn">
-                    <?php
-                        if(!empty($_SESSION['uname']))
-                        {
-                    ?>
-                            <a href="login.php?log=1"><input type="button" name="logout" value="Logout"></a>	
-                            
-                    <?php
-                        }
-                        else
-                        {
-                    ?>		
-                            <a href="login.php" ><input type="button" name="login" value="Log in"></a>
-                    <?php } ?>
-                            
+                    @if (Auth::check())
+                        <!-- Show the "Logout" button when the user is authenticated -->
+                        @if (session()->has('username'))
+                        <a href="{{ route('logout') }}">
+                            <input type="button" value="Logout ({{ session('username') }})">
+                        </a>
+                        @else
+                            <a href="{{ route('logout') }}">
+                                <input type="button" value="Logout">
+                            </a>
+                        @endif
+                    @else
+                        <!-- Show the "Login" button when the user is not authenticated -->
+                        <a href="{{ url('login-form') }}">
+                            <input type="button" value="Log In">
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
         <div class="home-page">
-            <div class="pagnation">    
+            <div class="pagnation">
                 <div class="list">
                     <ul>
                         <li><a href="index5.php">HOME</a></li>
@@ -61,6 +64,5 @@
         </div>
         <div class="null">
         </div>
-			
+
 		<div class="main-categorious">
-             

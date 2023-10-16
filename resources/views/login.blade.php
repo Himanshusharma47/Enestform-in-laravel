@@ -5,21 +5,34 @@
 
 
 @section('login-section')
-			
+
 <div class="login-here">
+    @if(session('error'))
+    <div class="error-danger">
+        {{ session('error') }}
+    </div>
+    @endif
+
     <div class="login">
         <p>Login Here</p>
         <div  class="user-info">
-          
-            <form method="post" >
+
+            <form method="post" action="{{route('signin.data')}}">
+                @csrf
                 <table class="login-1">
                     <tr class="inpt">
                         <td ><span>Username</span></td>
                         <td><input type="text" name="username" required></td>
+                        @error('username')
+                        {{$message}}
+                        @enderror
                     </tr><br>
                     <tr class="inpt">
                         <td ><span>Password</span></td>
-                        <td><input type="password" name="password" required></td>
+                        <td><input type="password" name="upassword" required></td>
+                        @error('upassword')
+                        {{$message}}
+                        @enderror
                     </tr>
                     <tr class="logn-btn" >
                         <td></td>
@@ -28,7 +41,7 @@
                     </tr>
                 </table>
             </form>
-            
+
         </div>
     </div>
 </div>
@@ -63,5 +76,5 @@
 </div>
 </div>
 
-    
+
 @endsection

@@ -2,6 +2,16 @@
     <div class="cate-heading">
         <p>CATEGORIES</p>
     </div>
+    {{-- @if((request()->routeIs('add.product'))) --}}
+    {{-- <div class="items">
+        <ul>
+            @foreach ($data as $item)
+            <li value="{{$item->id}}">{{$item->categoryname}}</li>
+            @endforeach
+        </ul>
+    </div> --}}
+    {{-- @endif --}}
+
     <div class="items">
         <ul>
             <li>TVs</li>
@@ -18,4 +28,6 @@
             <li>Microwaves</li>
         </ul>
     </div>
+
+
 </div>
