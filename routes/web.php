@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('login-form', [ViewController::class, 'login_form']);
+Route::get('home-page', [ViewController::class, 'home_page']);
+Route::get('contact-page', [ViewController::class, 'contact_page']);
+Route::get('add_product-page', [ViewController::class, 'add_product_page']);
+// Route::get('buy_product-page', [ViewController::class, 'buy_product_page']);
+Route::get('buy_product-page', function(){
+    return view('buy_product');
 });
