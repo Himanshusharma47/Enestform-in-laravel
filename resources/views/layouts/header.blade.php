@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 	<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Catamaran&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{asset('assets/jquery/jquery.js')}}"></script>
+
 </head>
 <body>
 	<div class="main-div">
@@ -23,9 +25,15 @@
                             <input type="button" value="Log In">
                         </a>
                         @else
+                            @if (session('userName'))  {{-- pending --}}
                             <a href="{{ route('logout') }}">
-                                <input type="button" value="Log Out">
+                                <input type="button" value="Log Out {{session('userName')}}">
                             </a>
+                            @else
+                            <a href="{{ route('logout') }}">
+                                <input type="button" value="Log Out ">
+                            </a>
+                            @endif
                         @endif
                 </div>
             </div>

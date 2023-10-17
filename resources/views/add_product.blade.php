@@ -5,6 +5,11 @@
 @endpush
 
 @section('add-product-section')
+@if(session('success'))
+    <div class="success-message delay">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="footer">
 @include('layouts.leftlist')
 <div class="contact">
@@ -20,7 +25,7 @@
                 <img src="uploadimages/">
             </div>
             <div class="stock">
-                <p>In Stock: </p>
+                <p>In Stock:{{$item->pstock}} </p>
             </div>
             <div class="detail">
                 <span>Details:</span>
@@ -37,14 +42,15 @@
             </div>
 
 
-            <form method="post">
+            <form method="post" action="{{route('cart.data')}}">
+                @csrf
                 <div class="quantity">
                         <table>
                             <tr>
-                                <td><input type="hidden" name="userid" value=""></td>
-                                <td><input type="hidden" name="productid" value=""></td>
+                                <td><input type="hidden" name="userid" value="{{$userId}}"></td>
+                                <td><input type="hidden" name="productid" value="{{$item->id}}"></td>
                                 <td class="qty">Enter quantity</td>
-                                <td><input type="text" name="qty"></td>
+                                <td><input type="text" name="quantity"></td>
                             </tr>
                         </table>
                     <div class="price">

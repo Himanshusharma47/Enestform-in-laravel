@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Signup;
 use App\Models\UseCategory;
 use App\Models\UseProduct;
-use App\Models\Category;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -25,9 +25,12 @@ class ViewController extends Controller
     }
 
     public function add_product_page(Request $request,$id){
+
+        $user = Auth::guard('signup')->user();
+        $userId = $user->id;
         $data = UseCategory::all();
         $product=UseProduct::where('id',$id)->get();
-        return view('add_product',compact('data','product'));
+        return view('add_product',compact('data','product','userId'));
     }
 
     public function buy_product_page(Request $request,$id){
@@ -36,6 +39,8 @@ class ViewController extends Controller
         $product=UseProduct::where('category_id',$id)->get();
         return view('buy_product',compact('data','category','product'));
     }
+
+
 
 }
 

@@ -44,7 +44,7 @@
                 <img src="uploadimages/">
             </div>
             <div class="stock">
-                <p></p>
+                <p>In Stock : {{$item->pstock}}</p>
             </div>
 
         </div>

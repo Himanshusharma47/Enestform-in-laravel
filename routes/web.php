@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SigninController;
 
@@ -36,3 +37,9 @@ Route::get('/logout', [SigninController::class, 'logout'])->name('logout');
 
 // contact data route
 Route::post('contact-data', [ContactController::class, 'contact_data'])->name('contact.data');
+
+
+// cart data route
+Route::post('cart-data', [CartController::class, 'cart_data'])->name('cart.data');
+
+

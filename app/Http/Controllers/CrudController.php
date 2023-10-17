@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CrudController extends Controller
 {
 
-    // sign up data function start here 
+    // sign up data function start here
     public function signup_data(Request $request){
         $add  =  new Signup;
         if($request->isMethod('post'))
@@ -18,9 +18,9 @@ class CrudController extends Controller
             $add->password = hash::make($request->get("password")) ;
             $add->save();
         }
-        return redirect('login-form');
+        return redirect('login-form')->with('success', ('Sign-Up Successfully Done '));
     }
 
 
-    
+
 }

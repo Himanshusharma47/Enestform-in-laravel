@@ -6,7 +6,7 @@
 
 @section('home-section')
 @if(session('success'))
-    <div class="alert alert-success">
+    <div class="success-message delay">
         {{ session('success') }}
     </div>
 @endif
