@@ -37,11 +37,12 @@
                 </div>
                 <div class="input-info">
                     <div class="input-information">
-                        <form method="post">
+                        <form method="post" action="{{route('contact.data')}}">
+                            @csrf
                             <table class=" form">
                                 <tr>
                                     <td ><p>full Name* </p></td>
-                                    <td><input type="text" name="name" required></td>
+                                    <td><input type="text" name="fullname" required></td>
                                 </tr>
                                 <tr>
                                     <td > <p>E-mail Address </p></td>
@@ -49,7 +50,7 @@
                                 </tr>
                                 <tr>
                                     <td> <p>Message</p></td>
-                                    <td><textarea name="msg" ></textarea>  </td>
+                                    <td><textarea name="message" ></textarea>  </td>
                                     <td>
                                         <div class="snd-btn">
                                             <input type="submit" name="save" value="save">
@@ -62,7 +63,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     </div>
 </div>
 @endsection

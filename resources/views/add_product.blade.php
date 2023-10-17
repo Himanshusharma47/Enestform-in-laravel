@@ -6,10 +6,13 @@
 
 @section('add-product-section')
 <div class="footer">
-@include('layouts.leftlist')	
+@include('layouts.leftlist')
 <div class="contact">
+    @foreach ($product as $item)
     <div class="contact-us">
-        <p> </p>
+
+        <p>{{$item->pname}} </p>
+
     </div>
     <div class="dish-info">
         <div class="machine-pic">
@@ -29,11 +32,11 @@
                 <p></p>
             </div>
             <div class="model-info">
-                <span>Model:</span>
-                <p>Manufacturer:</p>
+                <span>Model:{{$item->pname}}</span>
+                <p>Manufacturer:{{$item->pname}}</p>
             </div>
-            
-         
+
+
             <form method="post">
                 <div class="quantity">
                         <table>
@@ -45,21 +48,22 @@
                             </tr>
                         </table>
                     <div class="price">
-                        <span></span>
+                        <span>Rs.{{$item->pprice}}</span>
                     </div>
                 </div>
                 <div class="cart">
                     <input type="submit" name="addcart" value="Add to Cart">
                 </div>
             </form>
-           
+
             <div class="checkout">
                 <input type="submit" name="" value="checkout">
             </div>
         </div>
     </div>
-   
-    
+    @endforeach
+
+
     <div class="info">
         <form>
             <table class="table-info">

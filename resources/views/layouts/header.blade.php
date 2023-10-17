@@ -17,7 +17,7 @@
                     <p>THE BIGGEST CHOICE OF THE WEB</p>
                 </div>
                 <div class="btn">
-                    @if (!Auth::guard('signup')->check())
+                         @if (!Auth::guard('signup')->check())
                         <!-- Show the "Logout" button when the user is authenticated -->
                         <a href="{{ route('login') }}">
                             <input type="button" value="Log In">
@@ -34,12 +34,12 @@
             <div class="pagnation">
                 <div class="list">
                     <ul>
-                        <li><a href="index5.php">HOME</a></li>
+                        <li><a href="{{url('home-page')}}">HOME</a></li>
                         <li>NEW PROJECT</li>
                         <li>SPECIAL</li>
                         <li>ALL PRODUCTS</li>
                         <li>REVIEWS</li>
-                        <li><a href="index.php">CONTACT</a></li>
+                        <li><a href="{{url('contact-page')}}">CONTACT</a></li>
                         <li>FAQS</li>
                     </ul>
                 </div>

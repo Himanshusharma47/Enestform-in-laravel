@@ -20,12 +20,5 @@ class Signup extends Model implements Authenticatable
     //     return $this->belongsTo(Addcategory::class);
     // }
 
-    // public function getCategoryNameAttribute()
-    // {
-    //     if ($this->category) {
-    //         return $this->category->categoryname;
-    //     } else {
-    //         return 'No Category'; // or any default value you prefer
-    //     }
-    // }
+
 }

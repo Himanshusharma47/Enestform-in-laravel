@@ -5,16 +5,22 @@
 @endpush
 
 @section('home-section')
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <div class="footer">
 	<div class="main-img">
 		<img src="{{asset('assets/images/16.png')}}">
 	</div>
-	@include('layouts.leftlist')	
+	@include('layouts.leftlist')
 	<div class="contact">
 		<div class="contact-us">
 			<p>FEATURED PRODUCTS</p>
 		</div>
-		
+
 		<div class="Camera-info">
 			<div class="samsung-cam">
 				<!-- <div class="cam-info"> -->
