@@ -22,17 +22,19 @@
                 <table class="login-1">
                     <tr class="inpt">
                         <td ><span>Username</span></td>
-                        <td><input type="text" name="username" required></td>
-                        @error('username')
-                        {{$message}}
-                        @enderror
+                        <td><input type="text" name="fullname" required>
+                            @error('username')
+                            {{$message}}
+                            @enderror
+                        </td>
                     </tr><br>
                     <tr class="inpt">
                         <td ><span>Password</span></td>
-                        <td><input type="password" name="upassword" required></td>
-                        @error('upassword')
-                        {{$message}}
-                        @enderror
+                        <td><input type="password" name="password" required>
+                            @error('password')
+                            {{$message}}
+                            @enderror
+                        </td>
                     </tr>
                     <tr class="logn-btn" >
                         <td></td>

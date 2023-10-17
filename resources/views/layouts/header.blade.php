@@ -17,23 +17,16 @@
                     <p>THE BIGGEST CHOICE OF THE WEB</p>
                 </div>
                 <div class="btn">
-                    @if (Auth::check())
+                    @if (!Auth::guard('signup')->check())
                         <!-- Show the "Logout" button when the user is authenticated -->
-                        @if (session()->has('username'))
-                        <a href="{{ route('logout') }}">
-                            <input type="button" value="Logout ({{ session('username') }})">
+                        <a href="{{ route('login') }}">
+                            <input type="button" value="Log In">
                         </a>
                         @else
                             <a href="{{ route('logout') }}">
-                                <input type="button" value="Logout">
+                                <input type="button" value="Log Out">
                             </a>
                         @endif
-                    @else
-                        <!-- Show the "Login" button when the user is not authenticated -->
-                        <a href="{{ url('login-form') }}">
-                            <input type="button" value="Log In">
-                        </a>
-                    @endif
                 </div>
             </div>
         </div>

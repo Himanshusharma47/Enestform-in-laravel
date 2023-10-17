@@ -20,11 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login-form', [ViewController::class, 'login_form']);
+Route::get('login-form', [ViewController::class, 'login_form'])->name('login');
 Route::get('home-page', [ViewController::class, 'home_page']);
 Route::get('contact-page', [ViewController::class, 'contact_page']);
 Route::get('add-product-page', [ViewController::class, 'add_product_page']);
-Route::get('buy-product-page', [ViewController::class, 'buy_product_page']);
+// Route::get('buy-product-page', [ViewController::class, 'buy_product_page']);
+Route::get('buy-product-page/{id}', [ViewController::class, 'buy_product_page']);
 
 
 // signup and signin data crud

@@ -13,19 +13,14 @@ class SigninController extends Controller
 {
     public function signin_data(Request $request){
         $request->validate([
-            'username' => 'required',
-            'upassword' => 'required',
+            'fullname' => 'required',
+            'password' => 'required',
         ]);
 
-        $credentials = $request->only('username', 'upassword');
+        $credentials = $request->only('fullname', 'password');
 
         // Retrieve the user from the database based on the provided username
-        $user = Signup::where('fullname', $credentials['username'])->first();
-
-        if ($user && $user->password === $credentials['upassword']) {
-            // Authentication successful
-            Auth::login($user);
-            session(['username' => $user->fullname]); // Store the user's name in the session
+        if (Auth::guard('signup')->attempt($credentials)) {
             return redirect()->intended('home-page');
         }
         return redirect("login-form")->with('error', 'Oops! You have entered invalid credentials');

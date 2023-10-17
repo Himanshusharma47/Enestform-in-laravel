@@ -6,7 +6,7 @@
 
 @section('contact-section')
 <div class="footer">
-@include('layouts.leftlist')	
+@include('layouts.leftlist')
 <div class="contact">
     <div class="contact-us">
         <p>CONTACT US</p>

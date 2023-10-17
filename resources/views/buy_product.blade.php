@@ -6,9 +6,14 @@
 
 @section('buy-product-section')
 <div class="footer">
-    @include('layouts.leftlist')	
+@include('layouts.leftlist')	
 <div class="contact">  
     <div class="contact-us">
+       
+            @foreach ($category as $catg)
+            <p>{{$catg->categoryname}}</p>
+        @endforeach
+       
     </div>
     <div class="product-info">
         <span>Sort by:</span>
@@ -31,14 +36,17 @@
     
    
     
+    
+    @foreach ($product as $item)
     <div class="dish-info">
         <div class="machine-pic">
             <div class="img">
                 <img src="uploadimages/">
             </div>
             <div class="stock">
-                <p>In Stock: </p>
+                <p></p>
             </div>
+           
         </div>
         
         <div class="machine-info">
@@ -47,21 +55,20 @@
             </div>
             <!-- <hr class="hr"> -->
             <div class="washer">
-                <p></p>
+                <p>{{$item->pname}}</p>
             </div>
             <div class="model-info">
-                <span>Model:</span>
-                <p>Manufacturer:</p>
+                <span>Model:{{$item->pname}}</span>
+                <p>Manufacturer:{{$item->pdescription}}</p>
             </div>
             <div class="price">
-                <span></span>
+                <span>Rs.{{$item->pprice}}</span>
             </div>
             <div class="checkout">
-          
             </div>
         </div>
     </div>
-  
+    @endforeach
 </div>
 </div>
 @endsection
