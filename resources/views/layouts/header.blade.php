@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 	<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Catamaran&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{asset('assets/jquery/jquery.js')}}"></script>
+
 </head>
 <body>
 	<div class="main-div">
@@ -17,15 +19,21 @@
                     <p>THE BIGGEST CHOICE OF THE WEB</p>
                 </div>
                 <div class="btn">
-                    @if (!Auth::guard('signup')->check())
+                         @if (!Auth::guard('signup')->check())
                         <!-- Show the "Logout" button when the user is authenticated -->
                         <a href="{{ route('login') }}">
                             <input type="button" value="Log In">
                         </a>
                         @else
+                            @if (session('userName'))  {{-- pending --}}
                             <a href="{{ route('logout') }}">
-                                <input type="button" value="Log Out">
+                                <input type="button" value="Log Out {{session('userName')}}">
                             </a>
+                            @else
+                            <a href="{{ route('logout') }}">
+                                <input type="button" value="Log Out ">
+                            </a>
+                            @endif
                         @endif
                 </div>
             </div>
@@ -34,12 +42,12 @@
             <div class="pagnation">
                 <div class="list">
                     <ul>
-                        <li><a href="index5.php">HOME</a></li>
+                        <li><a href="{{url('home-page')}}">HOME</a></li>
                         <li>NEW PROJECT</li>
                         <li>SPECIAL</li>
                         <li>ALL PRODUCTS</li>
                         <li>REVIEWS</li>
-                        <li><a href="index.php">CONTACT</a></li>
+                        <li><a href="{{url('contact-page')}}">CONTACT</a></li>
                         <li>FAQS</li>
                     </ul>
                 </div>

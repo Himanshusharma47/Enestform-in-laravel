@@ -8,8 +8,13 @@
 
 <div class="login-here">
     @if(session('error'))
-    <div class="error-danger">
-        {{ session('error') }}
+        <div class="error-danger delay">
+            {{ session('error') }}
+        </div>
+    @endif
+    @if (session('succes'))
+    <div class="success-message delay">
+        {{ session('success') }}
     </div>
     @endif
 

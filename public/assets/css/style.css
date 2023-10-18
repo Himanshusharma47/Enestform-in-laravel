@@ -4,6 +4,7 @@ body{
 	font-family: arial;
 	font-size:13px;
 }
+
 .head-div{
 	width: 100%;
 	height:110px;
@@ -36,7 +37,7 @@ body{
 	font-size: 40px;
 	font-family: 'Merriweather Sans', sans-serif;
 	color: white;
-} 
+}
 .head p{
 	color: gray;
 	font-size: 15px;
@@ -313,7 +314,7 @@ body{
 	border:1px solid black;
 	text-align: center;
 	color:white;
-} 
+}
 .list-1 ul {
 	padding: 0;
 }
@@ -347,7 +348,7 @@ body{
 	font-size: 40px;
 	font-family: 'Merriweather Sans', sans-serif;
 	color: white;
-} 
+}
 .head p{
 	color: gray;
 	font-size: 15px;
@@ -519,12 +520,12 @@ body{
 	width: 690px;
 	margin-left:20px;
 	margin-top: 10px;
-	height: 650px; 
-	border:1px solid lightgray; 
+	height: 650px;
+	border:1px solid lightgray;
 }
 .costomer-service{
 	margin-top: 20px;
-	margin-left:15px; 
+	margin-left:15px;
 	margin-bottom: 20px;
 }
 .costomer-service p{
@@ -702,7 +703,7 @@ body{
 	font-size:16px;
 }
 .inpt-1 input{
-	padding:6px; 
+	padding:6px;
 	border:1px solid gray;
 	margin-bottom:10px;
 }
@@ -846,7 +847,7 @@ body{
 	border:1px solid black;
 	text-align: center;
 	color:white;
-} 
+}
 .list-1 ul {
 	padding: 0;
 }
@@ -1107,7 +1108,7 @@ body{
 	border:1px solid black;
 	text-align: center;
 	color:white;
-} 
+}
 .list-1 ul {
 	padding: 0;
 }
@@ -1228,7 +1229,7 @@ body{
 }
 .cart-1-btn i{
 	font-size:28px;
-	
+
 }
 .cart-2-btn i{
 	font-size:28px;
@@ -1530,7 +1531,7 @@ body{
 	border:1px solid black;
 	text-align: center;
 	color:white;
-} 
+}
 .list-1 ul {
 	padding: 0;
 }
@@ -1552,3 +1553,30 @@ body{
 	font-weight: bold;
 	color:darkgray;
 }
+
+
+
+
+/* laravel css for error handling*/
+.error-danger{
+
+	color: red;
+	padding: 10px;
+	width: 500px;
+	border: 1px solid brown;
+	background-color: rgb(255, 152, 152);
+	border-radius: 2px;
+}
+
+.success-message{
+
+position: relative;
+right: 0;
+	color: rgb(14, 72, 5);
+	padding: 10px;
+	width: 500px;
+	border: 1px solid rgb(3, 63, 23);
+	background-color: rgb(85, 254, 130);
+	border-radius: 2px;
+}
+/* laravel css */

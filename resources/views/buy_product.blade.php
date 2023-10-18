@@ -6,14 +6,14 @@
 
 @section('buy-product-section')
 <div class="footer">
-@include('layouts.leftlist')	
-<div class="contact">  
+@include('layouts.leftlist')
+<div class="contact">
     <div class="contact-us">
-       
+
             @foreach ($category as $catg)
             <p>{{$catg->categoryname}}</p>
-        @endforeach
-       
+            @endforeach
+
     </div>
     <div class="product-info">
         <span>Sort by:</span>
@@ -33,10 +33,10 @@
             <input class="nxt" type="submit" name="" value="Next">
         </div>
     </div>
-    
-   
-    
-    
+
+
+
+
     @foreach ($product as $item)
     <div class="dish-info">
         <div class="machine-pic">
@@ -44,11 +44,11 @@
                 <img src="uploadimages/">
             </div>
             <div class="stock">
-                <p></p>
+                <p>In Stock : {{$item->pstock}}</p>
             </div>
-           
+
         </div>
-        
+
         <div class="machine-info">
             <div class="date">
                 <span>Date Added:2013-06-01  08:05:32</span>
@@ -65,6 +65,16 @@
                 <span>Rs.{{$item->pprice}}</span>
             </div>
             <div class="checkout">
+                @if (!Auth::guard('signup')->check())
+                <!-- Show the "Logout" button when the user is authenticated -->
+                <a href="{{ route('login') }}">
+                    <input type="button" value="Login First">
+                </a>
+                @else
+                    <a href="{{ url('add-product-page/'. $item->id) }}">
+                        <input type="button" value="Buy Now">
+                    </a>
+                @endif
             </div>
         </div>
     </div>

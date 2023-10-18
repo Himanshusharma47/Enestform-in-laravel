@@ -16,6 +16,7 @@
                     </div>
                 </div>
             </div>
-        
+
+            <script src="{{asset('assets/js/message-popup.js')}}"></script>
     </body>
 </html>
