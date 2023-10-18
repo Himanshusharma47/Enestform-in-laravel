@@ -49,6 +49,7 @@
                             <tr>
                                 <td><input type="hidden" name="userid" value="{{$userId}}"></td>
                                 <td><input type="hidden" name="productid" value="{{$item->id}}"></td>
+                                <td><input type="hidden" name="productid" value="{{$item->pstock}}"></td>
                                 <td class="qty">Enter quantity</td>
                                 <td><input type="text" name="quantity"></td>
                             </tr>
