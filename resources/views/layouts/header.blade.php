@@ -25,15 +25,9 @@
                             <input type="button" value="Log In">
                         </a>
                         @else
-                            @if (session('userName'))  {{-- pending --}}
                             <a href="{{ route('logout') }}">
-                                <input type="button" value="Log Out {{session('userName')}}">
+                                <input type="button" value="Log Out : {{Auth::guard('signup')->user()->fullname}}">
                             </a>
-                            @else
-                            <a href="{{ route('logout') }}">
-                                <input type="button" value="Log Out ">
-                            </a>
-                            @endif
                         @endif
                 </div>
             </div>

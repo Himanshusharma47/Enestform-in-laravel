@@ -34,14 +34,11 @@
         </div>
     </div>
 
-
-
-
     @foreach ($product as $item)
     <div class="dish-info">
         <div class="machine-pic">
             <div class="img">
-                <img src="uploadimages/">
+                <img src="{{asset($item->pimage)}}">
             </div>
             <div class="stock">
                 <p>In Stock : {{$item->pstock}}</p>

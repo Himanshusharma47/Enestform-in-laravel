@@ -16,7 +16,8 @@ class ViewController extends Controller
 
     public function home_page(){
         $data = UseCategory::all();
-        return view('home',compact('data'));
+        $products = UseProduct::all();
+        return view('home',compact('data', 'products'));
     }
 
     public function contact_page(){

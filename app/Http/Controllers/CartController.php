@@ -10,19 +10,29 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     public function cart_data(Request $request){
+
+        $pstock = $request->get('pstock');
+        $productid = $request->get('productid');
+        $userid = $request->get('userid') ;
+        $quantity = $request->get('quantity') ;
+
         $add = new Cart;
 
         if($request->isMethod('post'))
         {
-            $pstock = $request->get('pstock');
-            $productid = $request->get('pstock');
-            $userid = $request->get('pstock');
-            $quantity = $request->get('quantity');
-            $add->userid = $userid;
-            $add->productid =$productid ;
-            $add->quantity = $quantity;
-            $add->save();
+
+            if($quantity>0 &&  $quantity<=$pstock  ) {
+                UseProduct::where('id', $productid)->decrement('pstock', $quantity);
+                $add->userid = $userid;
+                $add->productid =$productid ;
+                $add->quantity = $quantity;
+                $add->save();
+            }
+            else
+            {
+                return redirect()->back()->with('error','Quantity must be valid according to the Stock.');
+            }
         }
-        return redirect('home-page')->with('success','Add To Cart Successfully');
+        return redirect()->back()->with('success','Add To Cart Successfully');
     }
 }

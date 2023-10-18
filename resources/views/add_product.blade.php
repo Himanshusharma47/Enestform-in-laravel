@@ -10,6 +10,11 @@
         {{ session('success') }}
     </div>
 @endif
+@if(session('error'))
+    <div class="error-danger delay">
+        {{ session('error') }}
+    </div>
+@endif
 <div class="footer">
 @include('layouts.leftlist')
 <div class="contact">
@@ -22,7 +27,7 @@
     <div class="dish-info">
         <div class="machine-pic">
             <div class="img">
-                <img src="uploadimages/">
+                <img src="{{asset($item->pimage)}}" />
             </div>
             <div class="stock">
                 <p>In Stock:{{$item->pstock}} </p>
@@ -49,7 +54,7 @@
                             <tr>
                                 <td><input type="hidden" name="userid" value="{{$userId}}"></td>
                                 <td><input type="hidden" name="productid" value="{{$item->id}}"></td>
-                                <td><input type="hidden" name="productid" value="{{$item->pstock}}"></td>
+                                <td><input type="hidden" name="pstock" value="{{$item->pstock}}"></td>
                                 <td class="qty">Enter quantity</td>
                                 <td><input type="text" name="quantity"></td>
                             </tr>

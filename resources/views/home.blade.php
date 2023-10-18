@@ -21,14 +21,16 @@
 			<p>FEATURED PRODUCTS</p>
 		</div>
 
+		@foreach ($products->random(6) as $product )
 		<div class="Camera-info">
 			<div class="samsung-cam">
+					
 				<!-- <div class="cam-info"> -->
-				<div class="cam-info">
-					<img src="uploadimages/" />
+					<div class="cam-info">
+					<img src="{{asset($product->pimage)}}" />
 					<div class="sam-prc">
-						<span></span>
-						<p></p>
+						<span>{{$product->pname}}</span>
+						<p>Rs.{{$product->pprice}}</p>
 					</div>
 					<hr class="hr2">
 					<div class="cart-btn">
@@ -41,6 +43,7 @@
 				</div>
 			</div>
 		</div>
+		@endforeach
 	</div>
 </div>
 @endsection

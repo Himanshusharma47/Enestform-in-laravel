@@ -10,8 +10,8 @@
             @endforeach
         </ul>
     </div>
-    {{-- @endif
-
+    
+    {{-- @endif 
     <div class="items">
         <ul>
             <li>TVs</li>
