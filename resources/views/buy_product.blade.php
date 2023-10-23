@@ -1,20 +1,23 @@
 @extends('layouts.main')
 
+{{-- title add here --}}
 @push('title')
    Buy-Product
 @endpush
 
+{{-- buy-product-section start here --}}
 @section('buy-product-section')
 <div class="footer">
+{{--leftlist start here  --}}
 @include('layouts.leftlist')
 <div class="contact">
+    {{-- contact-us section start here --}}
     <div class="contact-us">
-
-            @foreach ($category as $catg)
-            <p>{{$catg->categoryname}}</p>
-            @endforeach
-
+        @foreach ($category as $catg)
+        <p>{{$catg->categoryname}}</p>
+        @endforeach
     </div>
+    {{-- product-info start here --}}
     <div class="product-info">
         <span>Sort by:</span>
         <form>
@@ -26,6 +29,7 @@
             </select>
         </form>
     </div>
+    {{-- display-product start here --}}
     <div class="display-product">
         <span>Displaying 1 to 5(of 6 new product)</span>
         <div class="btnnn">
@@ -33,7 +37,7 @@
             <input class="nxt" type="submit" name="" value="Next">
         </div>
     </div>
-
+    {{-- dash-info start here --}}
     @foreach ($product as $item)
     <div class="dish-info">
         <div class="machine-pic">
@@ -45,7 +49,7 @@
             </div>
 
         </div>
-
+        {{-- machine-info start here --}}
         <div class="machine-info">
             <div class="date">
                 <span>Date Added:2013-06-01  08:05:32</span>
@@ -61,7 +65,9 @@
             <div class="price">
                 <span>Rs.{{$item->pprice}}</span>
             </div>
+            {{-- checkout section start here --}}
             <div class="checkout">
+                {{-- authentication for signup --}}
                 @if (!Auth::guard('signup')->check())
                 <!-- Show the "Logout" button when the user is authenticated -->
                 <a href="{{ route('login') }}">

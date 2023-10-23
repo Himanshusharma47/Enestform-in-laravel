@@ -10,18 +10,21 @@ use Illuminate\Http\Request;
 
 class ViewController extends Controller
 {
+    // login form function
     public function login_form(){
         return view('login');
     }
 
+    // home page data show here
     public function home_page(){
         $data = UseCategory::all();
         $products = UseProduct::all();
         return view('home',compact('data', 'products'));
     }
 
+    // contact page function start here
     public function contact_page(){
-        if(Auth::guard('signup')->check()){    
+        if(Auth::guard('signup')->check()){
             $data = UseCategory::all();
             return view('contact', compact('data'));
         }
@@ -31,6 +34,7 @@ class ViewController extends Controller
         }
     }
 
+    // add-product-page function start here
     public function add_product_page(Request $request,$id){
 
         $user = Auth::guard('signup')->user();
@@ -40,6 +44,7 @@ class ViewController extends Controller
         return view('add_product',compact('data','product','userId'));
     }
 
+    // buy-product-page function start here
     public function buy_product_page(Request $request,$id){
         $data = UseCategory::all();
         $category=UseCategory::where('id',$id)->get();

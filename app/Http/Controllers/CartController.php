@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+    // cart data function  start here
     public function cart_data(Request $request){
 
         $pstock = $request->get('pstock');
@@ -16,11 +17,11 @@ class CartController extends Controller
         $userid = $request->get('userid') ;
         $quantity = $request->get('quantity') ;
 
+        // cart data table start here
         $add = new Cart;
 
         if($request->isMethod('post'))
         {
-
             if($quantity>0 &&  $quantity<=$pstock  ) {
                 UseProduct::where('id', $productid)->decrement('pstock', $quantity);
                 $add->userid = $userid;

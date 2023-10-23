@@ -11,13 +11,17 @@
 
 </head>
 <body>
+    {{-- main-div start here --}}
 	<div class="main-div">
 		<div class="head-div">
+            {{-- main container start here --}}
             <div class="main">
                 <div class="head">
                     <span>EVEST</span>
                     <p>THE BIGGEST CHOICE OF THE WEB</p>
                 </div>
+
+                {{-- signup and login btn start here --}}
                 <div class="btn">
                          @if (!Auth::guard('signup')->check())
                         <!-- Show the "Logout" button when the user is authenticated -->
@@ -32,8 +36,10 @@
                 </div>
             </div>
         </div>
+        {{-- home page start here --}}
         <div class="home-page">
             <div class="pagnation">
+                {{-- list start here --}}
                 <div class="list">
                     <ul>
                         <li><a href="{{url('home-page')}}">HOME</a></li>
@@ -46,6 +52,7 @@
                         <li>FAQS</li>
                     </ul>
                 </div>
+                {{-- search start here --}}
                 <div class="search">
                     <div class="search-1">
                         <div class="input">
@@ -60,5 +67,5 @@
         </div>
         <div class="null">
         </div>
-
+        {{-- main-categories start here --}}
 		<div class="main-categorious">

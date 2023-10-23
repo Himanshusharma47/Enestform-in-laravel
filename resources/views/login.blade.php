@@ -1,27 +1,31 @@
 @extends('layouts.main')
+{{-- title start here --}}
 @push('title')
   Login
 @endpush
 
-
+{{-- login section  start here --}}
 @section('login-section')
-
+{{-- login section start here --}}
 <div class="login-here">
+    {{-- error message show here --}}
     @if(session('error'))
         <div class="error-danger delay">
             {{ session('error') }}
         </div>
     @endif
+    {{-- success msg show here --}}
     @if (session('success'))
     <div class="success-message delay">
         {{ session('success') }}
     </div>
     @endif
 
+    {{-- login start here --}}
     <div class="login">
         <p>Login Here</p>
         <div  class="user-info">
-
+            {{-- form start here --}}
             <form method="post" action="{{route('signin.data')}}">
                 @csrf
                 <table class="login-1">
@@ -45,6 +49,7 @@
                             </div>
                         </td>
                     </tr>
+                    {{-- logn-btn start here --}}
                     <tr class="logn-btn" >
                         <td></td>
                         <td><input class="log" type="submit" name="login" value="Login">
@@ -57,10 +62,13 @@
     </div>
 </div>
 </div>
+{{-- signup section start here --}}
 <div class="sign-up">
 <div class="sign">
     <p>New to Enest? <a href=""> Sign up</a></p>
+    {{-- user-info start here --}}
     <div  class="user-info">
+        {{-- form start here --}}
         <form method="post" action="{{route('signup.data')}}">
             @csrf
             <table class="login-1">
@@ -74,6 +82,7 @@
                         </div>
                     </td>
                 </tr><br>
+                {{-- inp-1 start here --}}
                 <tr class="inpt-1">
                     <td ><span>Email</span></td>
                     <td><input type="email" name="email" >
@@ -82,7 +91,7 @@
                             {{$message}}
                             @enderror
                         </div>
-                        
+
                     </td>
                 </tr>
                 <tr class="inpt-1">
@@ -95,6 +104,7 @@
                         </div>
                     </td>
                 </tr>
+                {{-- logn-btn start here --}}
                 <tr class="logn-btn" >
                     <td></td>
                     <td><input class="log" type="submit" name="signup" value="Sign up">

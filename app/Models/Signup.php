@@ -11,14 +11,8 @@ class Signup extends Model implements Authenticatable
 {
     use HasFactory;
     use AuthenticatableTrait;
+    // signup table add here
     protected $table= 'signups';
     public $timestamps = false;
-
-
-    // public function category()
-    // {
-    //     return $this->belongsTo(Addcategory::class);
-    // }
-
 
 }

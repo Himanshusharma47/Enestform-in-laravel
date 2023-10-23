@@ -1,3 +1,4 @@
+{{-- main file start here --}}
 @include('layouts.header')
 @yield('login-section')
 @yield('home-section')

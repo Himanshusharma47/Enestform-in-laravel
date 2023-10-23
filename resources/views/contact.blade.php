@@ -1,16 +1,20 @@
 @extends('layouts.main')
 
+{{-- add title here --}}
 @push('title')
     Contact
 @endpush
 
+{{-- contact section start here --}}
 @section('contact-section')
 <div class="footer">
+{{-- leftlist satrt here --}}
 @include('layouts.leftlist')
 <div class="contact">
     <div class="contact-us">
         <p>CONTACT US</p>
     </div>
+    {{-- customer info --}}
     <div class="costomer-info">
         <div class="costomer-service">
             <p>Customer Service:91 7508115758</p>
@@ -18,6 +22,7 @@
             <p>Yorex Infotec.</p>
         </div>
         <hr class="hr">
+        {{-- info start here --}}
         <div class="info">
             <div class="required-info">
                 <h4>Contact Us</h4>
@@ -27,6 +32,7 @@
                 <p>Login to view our order.</p>
             </div>
         </div>
+        {{-- border class start here --}}
         <div class="border">
             <div class="border-1">
                 <div class="border-2">
@@ -35,8 +41,10 @@
                 <div class="requir-info">
                     <span>*Required information</span>
                 </div>
+                {{-- input info start here --}}
                 <div class="input-info">
                     <div class="input-information">
+                        {{-- form start here --}}
                         <form method="post" action="{{route('contact.data')}}">
                             @csrf
                             <table class=" form">
