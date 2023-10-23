@@ -181,6 +181,15 @@ body{
 	font-size: 15px;
 	color:#2C2B2B;
 }
+.items ul li a {
+	text-decoration: none;
+	color:black;
+}
+
+.items ul li:hover{
+	background: #ede9e9;
+}
+
 .contact-us{
 	width: 690px;
 	margin-left:20px;
@@ -707,6 +716,10 @@ body{
 	border:1px solid gray;
 	margin-bottom:10px;
 }
+.red-color-validation{
+	color: red;
+}
+
 .list-1 ul {
 	padding: 0;
 }
@@ -1559,7 +1572,8 @@ body{
 
 /* laravel css for error handling*/
 .error-danger{
-
+	position: absolute;
+	right: 0;
 	color: red;
 	padding: 10px;
 	width: 500px;
@@ -1570,13 +1584,13 @@ body{
 
 .success-message{
 
-position: relative;
-right: 0;
-	color: rgb(14, 72, 5);
+	position: absolute;
+	right: 0;
+	color: rgb(34, 142, 18);
 	padding: 10px;
 	width: 500px;
 	border: 1px solid rgb(3, 63, 23);
-	background-color: rgb(85, 254, 130);
+	background-color: rgb(106, 237, 141);
 	border-radius: 2px;
 }
 /* laravel css */

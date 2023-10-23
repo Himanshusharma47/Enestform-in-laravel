@@ -26,7 +26,7 @@
                         </a>
                         @else
                             <a href="{{ route('logout') }}">
-                                <input type="button" value="Log Out : {{Auth::guard('signup')->user()->fullname}}">
+                                <input type="button" value="Logout {{Auth::guard('signup')->user()->fullname}}">
                             </a>
                         @endif
                 </div>
@@ -41,7 +41,8 @@
                         <li>SPECIAL</li>
                         <li>ALL PRODUCTS</li>
                         <li>REVIEWS</li>
-                        <li><a href="{{url('contact-page')}}">CONTACT</a></li>
+                        <li><a href="{{url('contact-page')}}">CONTACT</a>
+                        </li>
                         <li>FAQS</li>
                     </ul>
                 </div>

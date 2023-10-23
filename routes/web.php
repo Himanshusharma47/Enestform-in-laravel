@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
-use App\Http\Controllers\CrudController;
+use App\Http\Controllers\SignupController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SigninController;
@@ -31,7 +31,7 @@ Route::get('buy-product-page/{id}', [ViewController::class, 'buy_product_page'])
 
 
 // signup and signin data crud
-Route::post('signup-data', [CrudController::class, 'signup_data'])->name('signup.data');
+Route::post('signup-data', [SignupController::class, 'signup_data'])->name('signup.data');
 Route::post('signin-data', [SigninController::class, 'signin_data'])->name('signin.data');
 Route::get('/logout', [SigninController::class, 'logout'])->name('logout');
 

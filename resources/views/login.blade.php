@@ -12,7 +12,7 @@
             {{ session('error') }}
         </div>
     @endif
-    @if (session('succes'))
+    @if (session('success'))
     <div class="success-message delay">
         {{ session('success') }}
     </div>
@@ -28,17 +28,21 @@
                     <tr class="inpt">
                         <td ><span>Username</span></td>
                         <td><input type="text" name="fullname" required>
-                            @error('username')
-                            {{$message}}
-                            @enderror
+                            <div class="red-color-validation">
+                                @error('username')
+                                {{$message}}
+                                @enderror
+                            </div>
                         </td>
                     </tr><br>
                     <tr class="inpt">
                         <td ><span>Password</span></td>
                         <td><input type="password" name="password" required>
-                            @error('password')
-                            {{$message}}
-                            @enderror
+                            <div class="red-color-validation">
+                                @error('password')
+                                {{$message}}
+                                @enderror
+                            </div>
                         </td>
                     </tr>
                     <tr class="logn-btn" >
@@ -62,15 +66,34 @@
             <table class="login-1">
                 <tr class="inpt-1">
                     <td ><span>Full Name</span></td>
-                    <td><input type="text" name="fullname" required></td>
+                    <td><input type="text" name="fullname" >
+                        <div class="red-color-validation">
+                        @error('fullname')
+                        {{$message}}
+                        @enderror
+                        </div>
+                    </td>
                 </tr><br>
                 <tr class="inpt-1">
                     <td ><span>Email</span></td>
-                    <td><input type="email" name="email" required></td>
+                    <td><input type="email" name="email" >
+                        <div class="red-color-validation">
+                            @error('email')
+                            {{$message}}
+                            @enderror
+                        </div>
+                        
+                    </td>
                 </tr>
                 <tr class="inpt-1">
                     <td ><span>Password</span></td>
-                    <td><input type="password" name="password" required></td>
+                    <td><input type="password" name="password" >
+                        <div class="red-color-validation">
+                            @error('password')
+                            {{$message}}
+                            @enderror
+                        </div>
+                    </td>
                 </tr>
                 <tr class="logn-btn" >
                     <td></td>

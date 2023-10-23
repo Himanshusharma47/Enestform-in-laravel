@@ -26,6 +26,8 @@ class SigninController extends Controller
         return redirect("login-form")->with('error', 'Oops! You have entered invalid credentials');
     }
 
+
+    // session destroy function 
     public function logout(){
         Session::flush();
         Auth::logout();

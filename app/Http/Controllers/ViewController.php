@@ -21,8 +21,14 @@ class ViewController extends Controller
     }
 
     public function contact_page(){
-        $data = UseCategory::all();
-        return view('contact', compact('data'));
+        if(Auth::guard('signup')->check()){    
+            $data = UseCategory::all();
+            return view('contact', compact('data'));
+        }
+        else
+        {
+            return redirect('login-form')->with('error','First Login Please');
+        }
     }
 
     public function add_product_page(Request $request,$id){
