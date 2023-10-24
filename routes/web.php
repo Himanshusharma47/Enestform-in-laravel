@@ -18,6 +18,7 @@ use App\Http\Controllers\SigninController;
 |
 */
 
+// welcome file
 Route::get('/', function () {
     return view('welcome');
 });
@@ -38,7 +39,6 @@ Route::get('/logout', [SigninController::class, 'logout'])->name('logout');
 
 // contact data route
 Route::post('contact-data', [ContactController::class, 'contact_data'])->name('contact.data');
-
 
 // cart data route
 Route::post('cart-data', [CartController::class, 'cart_data'])->name('cart.data');
