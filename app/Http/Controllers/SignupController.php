@@ -16,7 +16,7 @@ class SignupController extends Controller
 
             'fullname' => 'required',
             'email'    => 'required|email|unique:signups',
-            'password' => 'required|max:4|regex:/[@$!%*#?&]/',
+            'password' => 'required',
 
         ]);
 
