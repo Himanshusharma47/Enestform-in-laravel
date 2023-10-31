@@ -1,4 +1,5 @@
 @extends('layouts.main')
+
 {{-- title start here --}}
 @push('title')
   Login
@@ -6,14 +7,17 @@
 
 {{-- login section  start here --}}
 @section('login-section')
+
 {{-- login section start here --}}
 <div class="login-here">
+
     {{-- error message show here --}}
     @if(session('error'))
         <div class="error-danger delay">
             {{ session('error') }}
         </div>
     @endif
+
     {{-- success msg show here --}}
     @if (session('success'))
     <div class="success-message delay">
@@ -24,6 +28,7 @@
     {{-- login start here --}}
     <div class="login">
         <p>Login Here</p>
+
         <div  class="user-info">
             {{-- form start here --}}
             <form method="post" action="{{route('signin.data')}}">
@@ -57,11 +62,11 @@
                     </tr>
                 </table>
             </form>
-
         </div>
     </div>
 </div>
 </div>
+
 {{-- signup section start here --}}
 <div class="sign-up">
 <div class="sign">
@@ -115,6 +120,4 @@
     </div>
 </div>
 </div>
-
-
 @endsection

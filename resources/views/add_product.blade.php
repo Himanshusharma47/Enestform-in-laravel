@@ -7,28 +7,38 @@
 
 {{-- add-product section start here --}}
 @section('add-product-section')
-{{-- message show here --}}
+
+{{-- success message show here --}}
 @if(session('success'))
+
     <div class="success-message delay">
         {{ session('success') }}
     </div>
+
 @endif
+
+{{-- error messsage show here --}}
 @if(session('error'))
+
     <div class="error-danger delay">
         {{ session('error') }}
     </div>
+
 @endif
 
 {{-- main section start here --}}
 <div class="footer">
+
 @include('layouts.leftlist')
 
 {{-- contact start here --}}
 <div class="contact">
     @foreach ($product as $item)
+
     <div class="contact-us">
         <p>{{$item->pname}} </p>
     </div>
+
     {{-- dish info start here --}}
     <div class="dish-info">
         <div class="machine-pic">
@@ -43,6 +53,7 @@
                 <p></p>
             </div>
         </div>
+
         {{-- machine info start here --}}
         <div class="machine-info">
             <div class="washer">
@@ -70,11 +81,13 @@
                         <span>Rs.{{$item->pprice}}</span>
                     </div>
                 </div>
+
                 {{-- cart start here --}}
                 <div class="cart">
                     <input type="submit" name="addcart" value="Add to Cart">
                 </div>
             </form>
+
             {{-- checkout start here --}}
             <div class="checkout">
                 <input type="submit" name="" value="checkout">

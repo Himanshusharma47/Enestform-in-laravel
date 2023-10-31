@@ -4,6 +4,7 @@
 	<title>
          @stack('title')
     </title>
+
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 	<link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Catamaran&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,6 +12,7 @@
 
 </head>
 <body>
+
     {{-- main-div start here --}}
 	<div class="main-div">
 		<div class="head-div">
@@ -23,19 +25,20 @@
 
                 {{-- signup and login btn start here --}}
                 <div class="btn">
-                         @if (!Auth::guard('signup')->check())
-                        <!-- Show the "Logout" button when the user is authenticated -->
-                        <a href="{{ route('login') }}">
-                            <input type="button" value="Log In">
+                        @if (!Auth::guard('signup')->check())
+                    <!-- Show the "Logout" button when the user is authenticated -->
+                    <a href="{{ route('login') }}">
+                        <input type="button" value="Log In">
+                    </a>
+                    @else
+                        <a href="{{ route('logout') }}">
+                            <input type="button" value="Logout {{Auth::guard('signup')->user()->fullname}}">
                         </a>
-                        @else
-                            <a href="{{ route('logout') }}">
-                                <input type="button" value="Logout {{Auth::guard('signup')->user()->fullname}}">
-                            </a>
-                        @endif
+                    @endif
                 </div>
             </div>
         </div>
+
         {{-- home page start here --}}
         <div class="home-page">
             <div class="pagnation">
@@ -65,6 +68,7 @@
                 </div>
             </div>
         </div>
+
         <div class="null">
         </div>
         {{-- main-categories start here --}}

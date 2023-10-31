@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\session;
 
 class SigninController extends Controller
 {
-    public function signin_data(Request $request){
+    public function signinData(Request $request)
+    {
         $request->validate([
             'fullname' => 'required',
             'password' => 'required',
@@ -21,14 +22,17 @@ class SigninController extends Controller
 
         // Retrieve the user from the database based on the provided username
         if (Auth::guard('signup')->attempt($credentials)) {
+
             return redirect()->intended('home-page');
         }
+
         return redirect("login-form")->with('error', 'Oops! You have entered invalid credentials');
     }
 
 
-    // session destroy function 
-    public function logout(){
+    // session destroy function
+    public function logout()
+    {
         Session::flush();
         Auth::logout();
 

@@ -3,6 +3,7 @@
     <div class="cate-heading">
         <p>CATEGORIES</p>
     </div>
+
     {{-- @if((request()->routeIs('add.product'))) --}}
     <div class="items">
         <ul>

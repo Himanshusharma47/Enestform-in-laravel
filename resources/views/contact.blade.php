@@ -7,13 +7,17 @@
 
 {{-- contact section start here --}}
 @section('contact-section')
+
 <div class="footer">
+
 {{-- leftlist satrt here --}}
 @include('layouts.leftlist')
+
 <div class="contact">
     <div class="contact-us">
         <p>CONTACT US</p>
     </div>
+
     {{-- customer info --}}
     <div class="costomer-info">
         <div class="costomer-service">
@@ -21,7 +25,9 @@
             <p>Ludhiana,Punjab,INDIA</p>
             <p>Yorex Infotec.</p>
         </div>
+
         <hr class="hr">
+
         {{-- info start here --}}
         <div class="info">
             <div class="required-info">
@@ -32,6 +38,7 @@
                 <p>Login to view our order.</p>
             </div>
         </div>
+
         {{-- border class start here --}}
         <div class="border">
             <div class="border-1">

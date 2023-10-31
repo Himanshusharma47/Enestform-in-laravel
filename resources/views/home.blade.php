@@ -19,6 +19,7 @@
 	<div class="main-img">
 		<img src="{{asset('assets/images/16.png')}}">
 	</div>
+
 	{{-- left list include here --}}
 	@include('layouts.leftlist')
 
@@ -32,7 +33,6 @@
 		@foreach ($products->random(6) as $product )
 		<div class="Camera-info">
 			<div class="samsung-cam">
-
 				<!-- <div class="cam-info"> -->
 					<div class="cam-info">
 					<img src="{{asset($product->pimage)}}" />

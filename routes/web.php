@@ -24,23 +24,23 @@ Route::get('/', function () {
 });
 
 // View Data Routes start here
-Route::get('login-form', [ViewController::class, 'login_form'])->name('login');
-Route::get('home-page', [ViewController::class, 'home_page']);
-Route::get('contact-page', [ViewController::class, 'contact_page']);
-Route::get('add-product-page/{id}', [ViewController::class, 'add_product_page']);
-// Route::get('buy-product-page', [ViewController::class, 'buy_product_page']);
-Route::get('buy-product-page/{id}', [ViewController::class, 'buy_product_page']);
+Route::get('login-form',            [ViewController::class, 'loginForm'])->name('login');
+Route::get('home-page',             [ViewController::class, 'homePage']);
+Route::get('contact-page',          [ViewController::class, 'contactPage']);
+Route::get('add-product-page/{id}', [ViewController::class, 'addProductPage']);
+// Route::get('buy-product-page', [ViewController::class, 'buyProductPage']);
+Route::get('buy-product-page/{id}', [ViewController::class, 'buyProductPage']);
 
 
 // signup and signin data crud Routes
-Route::post('signup-data', [SignupController::class, 'signup_data'])->name('signup.data');
-Route::post('signin-data', [SigninController::class, 'signin_data'])->name('signin.data');
-Route::get('/logout', [SigninController::class, 'logout'])->name('logout');
+Route::post('signup-data', [SignupController::class, 'signupData'])->name('signup.data');
+Route::post('signin-data', [SigninController::class, 'signinData'])->name('signin.data');
+Route::get('/logout',      [SigninController::class, 'logout'])->name('logout');
 
 // contact data route
-Route::post('contact-data', [ContactController::class, 'contact_data'])->name('contact.data');
+Route::post('contact-data', [ContactController::class, 'contactData'])->name('contact.data');
 
 // cart data route
-Route::post('cart-data', [CartController::class, 'cart_data'])->name('cart.data');
+Route::post('cart-data', [CartController::class, 'cartData'])->name('cart.data');
 
 
